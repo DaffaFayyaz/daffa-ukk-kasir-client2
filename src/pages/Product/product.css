@@ -1,0 +1,100 @@
+
+.product-table {
+  width: calc(100% - 320px); 
+  margin-left: 280px; 
+  border-collapse: collapse;
+  margin-top: 100px; 
+  margin-bottom: 20px;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #dee2e6;
+  padding: 12px;
+  text-align: left;
+}
+
+.product-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.product-table tbody tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.product-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.product-table th,
+.product-table td {
+  transition: background-color 0.3s ease;
+}
+
+.product-table th:hover,
+.product-table td:hover {
+  background-color: #dee2e6;
+}
+
+.product-table th:first-child,
+.product-table td:first-child {
+  border-left: none;
+}
+
+.product-table th:last-child,
+.product-table td:last-child {
+  border-right: none;
+}
+
+.product-table th:first-child,
+.product-table th:last-child {
+  border-radius: 8px;
+}
+
+.product-table td:first-child,
+.product-table td:last-child {
+  border-radius: 0;
+}
+
+table img {
+  max-width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.pagination-container-product {
+  position: relative;
+  margin-top: 20px; /* Add margin to create space between table and pagination */
+  margin-right: 35px;
+}
+
+.pagination-product {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: flex-end; /* Align pagination to the right */
+}
+
+.pagination-product li {
+  margin: 0 5px;
+}
+
+.pagination-product li a {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination-product li.active a {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination-product li a:hover {
+  background-color: #f2f2f2;
+}

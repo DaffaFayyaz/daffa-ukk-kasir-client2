@@ -1,0 +1,231 @@
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+}
+
+.modal input {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal select.select-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal button.add {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.modal button.cancel {
+  background-color: #dc3545;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.modal button.add:hover,
+.modal button.cancel:hover {
+  opacity: 0.9;
+}
+
+.discount-table {
+  width: calc(100% - 320px); 
+  margin-left: 280px; 
+  border-collapse: collapse;
+  margin-top: 100px; 
+  margin-bottom: 20px;
+}
+
+.discount-table th,
+.discount-table td {
+  border: 1px solid #dee2e6;
+  padding: 12px;
+  text-align: left;
+}
+
+.discount-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.discount-table tbody tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.discount-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.discount-table th,
+.discount-table td {
+  transition: background-color 0.3s ease;
+}
+
+.discount-table th:hover,
+.discount-table td:hover {
+  background-color: #dee2e6;
+}
+
+.discount-table th:first-child,
+.discount-table td:first-child {
+  border-left: none;
+}
+
+.discount-table th:last-child,
+.discount-table td:last-child {
+  border-right: none;
+}
+
+.discount-table th:first-child,
+.discount-table th:last-child {
+  border-radius: 8px;
+}
+
+.discount-table td:first-child,
+.discount-table td:last-child {
+  border-radius: 0;
+}
+
+.table-title {
+  margin-left: 280px;
+  font-size: 24px; 
+}
+
+
+button {
+background-color: #4caf50;
+color: white;
+padding: 8px 12px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button.edit {
+background-color: #008CBA;
+}
+
+button.delete {
+background-color: #f44336;
+}
+
+button:hover {
+opacity: 0.8;
+}
+
+
+.loading-container {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 50px;
+}
+
+.spinner {
+border: 8px solid rgba(0, 0, 0, 0.1);
+border-left-color: #000000;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+animation: spin 1s linear infinite;
+}
+
+.add-discount-button {
+position: fixed;
+top: 20px; 
+right: 20px; 
+background-color: #4caf50;
+color: white;
+padding: 8px 12px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+z-index: 999; 
+}
+
+.add-discount-button:hover {
+opacity: 0.8;
+}
+
+.pagination-container-discount {
+  position: relative;
+  margin-top: 20px; /* Add margin to create space between table and pagination */
+  margin-right: 35px;
+}
+
+.pagination-discount {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: flex-end; /* Align pagination to the right */
+}
+
+.pagination-discount li {
+  margin: 0 5px;
+}
+
+.pagination-discount li a {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination-discount li.active a {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination-discount li a:hover {
+  background-color: #f2f2f2;
+}
+
+@keyframes spin {
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+
+
+@media only screen and (max-width: 768px) {
+table {
+  width: 100%;
+  margin-left: 0;
+}
+}

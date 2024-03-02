@@ -1,0 +1,98 @@
+
+.pemesanan-table {
+  width: calc(100% - 320px); 
+  margin-left: 280px; 
+  border-collapse: collapse;
+  margin-top: 30px; 
+  margin-bottom: 20px;
+}
+
+.pemesanan-table th,
+.pemesanan-table td {
+  border: 1px solid #dee2e6;
+  padding: 11px;
+  text-align: left;
+}
+
+.pemesanan-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.pemesanan-table tbody tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.pemesanan-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.pemesanan-table th,
+.pemesanan-table td {
+  transition: background-color 0.3s ease;
+}
+
+.pemesanan-table th:hover,
+.pemesanan-table td:hover {
+  background-color: #dee2e6;
+}
+
+.pemesanan-table th:first-child,
+.pemesanan-table td:first-child {
+  border-left: none;
+}
+
+.pemesanan-table th:last-child,
+.pemesanan-table td:last-child {
+  border-right: none;
+}
+
+.pemesanan-table th:first-child,
+.pemesanan-table th:last-child {
+  border-radius: 8px;
+}
+
+.pemesanan-table td:first-child,
+.pemesanan-table td:last-child {
+  border-radius: 0;
+}
+
+
+
+.pagination-container-pemesanan {
+  position: relative;
+  margin-top: 20px; /* Add margin to create space between table and pagination */
+  margin-right: 35px;
+}
+
+.pagination-pemesanan {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: flex-end; /* Align pagination to the right */
+}
+
+.pagination-pemesanan li {
+  margin: 0 5px;
+}
+
+.pagination-pemesanan li a {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination-pemesanan li.active a {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination-pemesanan li a:hover {
+  background-color: #f2f2f2;
+}
+
+
+
