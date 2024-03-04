@@ -15,13 +15,16 @@ const Sidebar = ({ role }) => {
       { to: '/meja', label: 'Meja' },
       { to: '/akun', label: 'Akun' },
       { to: '/pemesanan', label: 'Pemesanan' },
-      { to: '/riwayatpemesanan', label: 'Riwayat Pemesanan' }
+      { to: '/riwayatpemesanan', label: 'Riwayat Pemesanan' },
+      { to: '/notifpemesanan', label: 'Notification Transaction' },
+      { to: '/discountdetail', label: 'Discount Detail' }
     ];
   } else if (role === 'Kasir') {
     links = [
       { to: '/dashboard', label: 'Home' },
       { to: '/pemesanan', label: 'Pemesanan' },
-      { to: '/riwayatpemesanan', label: 'Riwayat Pemesanan' }
+      { to: '/riwayatpemesanan', label: 'Riwayat Pemesanan' },
+      { to: '/notifpemesanan', label: 'Notification Transaction' }
     ];
   }
 

@@ -270,7 +270,6 @@ const ProductList = () => {
                         <th>Deskripsi</th>
                         <th>Kategori</th>
                         <th>Stock</th>
-                        <th>Discount</th>
                         <th>Image</th>
                         <th>Actions</th>
                     </tr>
@@ -284,7 +283,6 @@ const ProductList = () => {
                             <td>{products.deskripsi}</td>
                             <td>{products.kategori}</td>
                             <td>{products.stock}</td>
-                            <td>{products.discount ? products.discount.nama_discount : "No Discount"}</td>
                             <td><img src={`${products.image}?${new Date().getTime()}`} alt={products.name} /></td>
                             <td className="actions">
                                 <button className="edit" onClick={() => handleStockChange(products.id)}>Ubah Stock</button>
