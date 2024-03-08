@@ -9,6 +9,7 @@ import Sidebar from '../../components/Sidebar';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import ReactPaginate from 'react-paginate';
+import AssignDiscountModal from './AssignDiscountModal';
 
 const Discount = () => {
     const [discount, setDiscount] = useState([]);
@@ -19,6 +20,8 @@ const Discount = () => {
     const [loading, setLoading] = useState(true);
     const [itemsPerPage] = useState(5);
     const [currentPage, setCurrentPage] = useState(0); 
+    const [isAssignModalOpen, setIsAssignModalOpen] = useState(false);
+    const [selectedDiscountId, setSelectedDiscountId] = useState(null);
     const [token, setToken] = useState('');
     const [role, setRole] = useState('');
     const Navigate = useNavigate();
@@ -64,6 +67,16 @@ const Discount = () => {
     useEffect(() => {
         getDiscount();
     }, []);
+
+    const openAssignModal = (discountId) => {
+        setIsAssignModalOpen(true);
+        setSelectedDiscountId(discountId);
+    };
+
+    const closeAssignModal = () => {
+        setIsAssignModalOpen(false);
+        setSelectedDiscountId(null);
+    };
 
     const deleteDiscount = async (id) => {
         Swal.fire({
@@ -160,6 +173,12 @@ const Discount = () => {
                 initialDiscountData={initialDiscountData}
                 getDiscount={getDiscount}
             />
+            <AssignDiscountModal
+                isOpen={isAssignModalOpen}
+                onClose={closeAssignModal}
+                discountId={selectedDiscountId}
+                getDiscount={getDiscount}
+            />
             <button className="add-discount-button" onClick={() => setIsModalOpen(true)}>Add New Discount</button>
             <Sidebar role="Admin"/>
             <div>
@@ -188,6 +207,7 @@ const Discount = () => {
                                     <td>{discounts.potongan_harga}%</td>
                                     <td>{formatDate(discounts.tgl_end)}</td>
                                     <td className="actions">
+                                        <button className="add" onClick={() => openAssignModal(discounts.id)}>Kelola Discount</button>
                                         <button className="edit" onClick={() => handleEditClick(discounts.id)}>Edit</button>
                                         <button onClick={() => deleteDiscount(discounts.id)} className="">Delete</button>
                                     </td>

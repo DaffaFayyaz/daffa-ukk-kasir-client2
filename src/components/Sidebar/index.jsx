@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiLogOut } from 'react-icons/fi'; // Import the logout icon from react-icons library
+import { FiLogOut } from 'react-icons/fi';
 import './Sidebar.css';
 import axios from 'axios';
 
@@ -16,8 +16,7 @@ const Sidebar = ({ role }) => {
       { to: '/akun', label: 'Akun' },
       { to: '/pemesanan', label: 'Pemesanan' },
       { to: '/riwayatpemesanan', label: 'Riwayat Pemesanan' },
-      { to: '/notifpemesanan', label: 'Notification Transaction' },
-      { to: '/discountdetail', label: 'Discount Detail' }
+      { to: '/notifpemesanan', label: 'Notification Transaction' }
     ];
   } else if (role === 'Kasir') {
     links = [
@@ -36,7 +35,6 @@ const Sidebar = ({ role }) => {
           console.log(error)
       }
   }
-
 
   return (
     <div className="sidebar">
