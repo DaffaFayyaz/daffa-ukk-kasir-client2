@@ -66,25 +66,15 @@ const AssignDiscountModal = ({ isOpen, onClose, discountId, getDiscount }) => {
         } catch (error) {
             console.error('Error assigning discount to products:', error);
             Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Something went wrong!",
+                icon: "info",
+                title: "Discount Product Updated",
+                showConfirmButton: false,
+                timer: 1500
             });
         }
     };
 
     const handleProductSelection = async (productId) => {
-        const isProductAssigned = await checkProductAssigned(productId);
-        
-        if (isProductAssigned && !selectedProducts.includes(productId)) {
-            Swal.fire({
-                icon: "warning",
-                title: "Product is already assigned to a discount",
-                text: "Please unassign the product from the current discount before assigning it to another discount.",
-            });
-            return;
-        }
-    
         if (selectedProducts.includes(productId)) {
             setSelectedProducts(selectedProducts.filter(id => id !== productId));
             try {
@@ -94,7 +84,7 @@ const AssignDiscountModal = ({ isOpen, onClose, discountId, getDiscount }) => {
                         discountId
                     }
                 });
-                const detailId = response.data.data[0].id; // Assuming only one detail is returned
+                const detailId = response.data.data[0].id;
                 await axios.delete(`${API_URL}/discountdetail/${detailId}`);
                 Swal.fire({
                     icon: "success",
@@ -111,34 +101,10 @@ const AssignDiscountModal = ({ isOpen, onClose, discountId, getDiscount }) => {
                 });
             }
         } else {
-            // Assign the product to the current discount
             setSelectedProducts([...selectedProducts, productId]);
         }
     };
     
-    
-    const checkProductAssigned = async (productId) => {
-        try {
-            const response = await axios.get(`${API_URL}/discountdetail`, {
-                params: {
-                    productId
-                }
-            });
-            const assignedDetails = response.data.data;
-            const isAssignedToOtherDiscount = assignedDetails.some(detail => detail.discount.id !== discountId);
-            return isAssignedToOtherDiscount;
-        } catch (error) {
-            console.error('Error checking product assignment:', error);
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Failed to check product assignment",
-            });
-            return true;
-        }
-    };
-    
-
     return (
         <Modal
             isOpen={isOpen}
