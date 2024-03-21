@@ -286,7 +286,6 @@ const ProductList = () => {
                             <td><img src={`${products.image}?${new Date().getTime()}`} alt={products.name} /></td>
                             <td className="actions">
                                 <button className="edit" onClick={() => handleStockChange(products.id)}>Ubah Stock</button>
-                                <button className="edit" onClick={() => handleDiscountChange(products.id)}>Select Discount</button>
                                 <button className="edit" onClick={() => handleEditClick(products.id)}>Edit</button>
                                 <button onClick={() => deleteProduct(products.id)} className="">Delete</button>
                             </td>
