@@ -1,0 +1,44 @@
+/* modaldiscount.css */
+
+.checkbox-container {
+    list-style-type: none;
+    padding: 0;
+}
+
+.checkbox-container li {
+    margin-bottom: 10px;
+}
+
+.checkbox-container label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.checkbox-container input[type="checkbox"]:checked::before {
+    content: "\2713";
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 3px;
+}

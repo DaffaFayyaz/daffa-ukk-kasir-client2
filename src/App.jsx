@@ -15,6 +15,8 @@ import Dashboard from "./pages/dashboard";
 import Invoice from "./pages/Pemesanan/invoice";
 import Akun from "./pages/Akun";
 import RiwayatPemesananList from "./pages/Pemesanan/riwayatpemesanan";
+import NotifTransaction from "./pages/Notifpemesanan";
+import DiscountDetail from "./pages/DiscountDetail";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +67,14 @@ const router = createBrowserRouter([
   {
     path: "/riwayatpemesanan",
     element: <RiwayatPemesananList />,
+  },
+  {
+    path: "/notifpemesanan",
+    element: <NotifTransaction />,
+  },
+  {
+    path: "/discountdetail",
+    element: <DiscountDetail />,
   },
 ]);
 
